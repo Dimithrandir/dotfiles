@@ -140,4 +140,18 @@ ex ()
 
 # better yaourt colors
 export YAOURT_COLORS="nb=1:pkg=1:ver=1;32:lver=1;45:installed=1;42:grp=1;34:od=1;41;5:votes=1;44:dsc=0:other=1;35"
+
+# alias for the bare repo managing the dotfiles
 alias dotfiles='/usr/bin/git --git-dir=/home/dimitar/.dotfiles/ --work-tree=/home/dimitar'
+
+# directory shortcuts
+goto () {
+  if [ $1 ] ; then
+    case $1 in
+      work) 	cd /mnt/workshop/Software/Memtagun/  		;;
+      *) 	echo "'$1' directory shortcut not specified" 	;; 
+    esac
+  else
+    echo "specify a directory shortcut"
+  fi 
+}
