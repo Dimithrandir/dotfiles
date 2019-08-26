@@ -29,6 +29,7 @@ set encoding=utf-8				" encoding
 set number relativenumber		" Display line numbers, relative to current line
 set wildmode=longest,list,full	" autocompletition for commands
 set linebreak					" break lines at word (must not have no wrap set)
+set breakindent					" use initial indent when breaking long lines
 set ruler						" always display cursot position
 set showcmd						" show command at lower right as executing
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o			" disable auto-commenting on new line

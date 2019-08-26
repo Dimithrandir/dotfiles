@@ -1,3 +1,4 @@
 set font "droid sans mono 12"
 set window-title-basename true
 set default-bg "#232323"
+set window-height 800
