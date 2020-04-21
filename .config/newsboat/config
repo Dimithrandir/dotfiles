@@ -1,0 +1,20 @@
+# general
+browser firefox
+prepopulate-query-feeds yes
+
+# vim-like bindings
+bind-key j down
+bind-key k up
+bind-key j next articlelist
+bind-key k prev articlelist
+bind-key J next-feed articlelist
+bind-key K prev-feed articlelist
+
+# macros
+macro m set browser "tsp mpv --really-quiet %u"; open-in-browser-and-mark-read ; set browser "firefox %u"
+
+# colors
+color listnormal default default dim
+highlight article "^(Feed|Title|Author|Link|Date|Links):" cyan default
+highlight article "\\[[0-9]*\\]:?" cyan default
+highlight article "\\((link|video)\\)$" cyan default
