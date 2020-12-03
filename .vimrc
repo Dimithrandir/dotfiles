@@ -6,6 +6,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
 
 call plug#end()
 
@@ -49,6 +50,7 @@ colo retrocede				" Pick a colorscheme
 " Find and replace
 set hlsearch				" highlight search results (escape with :noh)
 set incsearch				" search string incrementally, halfway as typing
+set ignorecase
 
 " Status line settings
 " set laststatus=2

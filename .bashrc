@@ -92,9 +92,11 @@ unset use_color safe_term match_lhs sh
 
 alias cp="cp -i"                          # confirm before overwriting something
 alias df='df -h'                          # human-readable sizes
+alias du='du -h'                          # human-readable sizes
 alias free='free -m'                      # show sizes in MB
 alias np='nano -w PKGBUILD'
 alias more=less
+
 
 xhost +local:root > /dev/null 2>&1
 
@@ -138,23 +140,16 @@ ex ()
   fi
 }
 
+# custom bindings
+bind "TAB:menu-complete"
+bind "set show-all-if-ambiguous on"
+bind "set menu-complete-display-prefix on"
+
 # better yaourt colors
 export YAOURT_COLORS="nb=1:pkg=1:ver=1;32:lver=1;45:installed=1;42:grp=1;34:od=1;41;5:votes=1;44:dsc=0:other=1;35"
 
 # alias for the bare repo managing the dotfiles
 alias dotfiles='/usr/bin/git --git-dir=/home/dimitar/.dotfiles/ --work-tree=/home/dimitar'
-
-# directory shortcuts
-cdto () {
-  if [ $1 ] ; then
-    case $1 in
-      work) 	cd /mnt/workshop/Software/Memtagun/  		;;
-      *) 	echo "'$1' directory shortcut not specified" 	;; 
-    esac
-  else
-    echo "specify a directory shortcut"
-  fi 
-}
 
 # man entries in color
 export LESS_TERMCAP_mb=$'\e[1;32m'
@@ -164,3 +159,19 @@ export LESS_TERMCAP_se=$'\e[0m'
 export LESS_TERMCAP_so=$'\e[01;33m'
 export LESS_TERMCAP_ue=$'\e[0m'
 export LESS_TERMCAP_us=$'\e[1;4;31m'
+
+alias cdto="source cdto"
+
+# cyrillic aliases
+alias цд="cd"
+alias лс="ls"
+
+alias t="watch -n 5 sensors"
+alias clearswap="sudo swapoff -a && sudo swapon -a"
+alias cswap="sudo swapoff -a && sudo swapon -a"
+alias rm="rm -v"
+alias mkdir="mkdir -v"
+alias d="ddgr -n 5"
+
+# environment variables
+export EDITOR="/usr/bin/vim"
