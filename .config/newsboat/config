@@ -1,0 +1,63 @@
+# general
+suppress-first-reload yes
+auto-reload yes
+reload-time 30
+browser firefox
+prepopulate-query-feeds yes
+feed-sort-order lastupdated
+goto-next-feed no
+history-limit 10
+restrict-filename no
+save-path "~/Documents/newsboat"
+
+# vim-like bindings
+bind-key j down
+bind-key k up
+bind-key j next articlelist
+bind-key k prev articlelist
+bind-key J next-feed articlelist
+bind-key K prev-feed articlelist
+bind-key h quit
+bind-key l open
+bind-key g home
+bind-key G end
+bind-key N prev-unread
+
+# move some of the default bindings 
+bind-key a toggle-article-read
+bind-key w sort
+bind-key W rev-sort
+bind-key i toggle-show-read-feeds
+bind-key ^L redraw
+unbind-key ^E 
+bind-key ^A edit-flags
+
+# formats 
+feedlist-format "%4i %n %11u %-2T %t"
+
+# filters
+define-filter "No YouTube" "tags !~ \"YouTube\" and tags !~ \"Aggregated\"" 
+define-filter "YouTube" "tags =~ \"YouTube\""
+
+# macros
+macro m set browser "tsp mpv --no-terminal --force-window=yes %u"; open-in-browser-and-mark-read ; set browser "firefox %u"
+macro M set browser "tsp mpv --ytdl-format='bestvideo[height<=720]+bestaudio/best[height<=720]' --no-terminal %u"; open-in-browser-and-mark-read ; set browser "firefox %u"
+macro B set browser "tsp mpv --ytdl-format=best --no-terminal %u"; open-in-browser-and-mark-read ; set browser "firefox %u"
+macro p set browser "firefox --private-window %u"; open-in-browser-and-mark-read ; set browser "firefox %u"
+#macro i set browser "urxvt -e yt -d %u &"; open-in-browser ; set browser "firefox %u"
+macro i set browser "st -e sh -c 'yt -d %u' &" ; open-in-browser ; set browser "firefox %u"
+macro I set browser "tsp yt -t %u"; open-in-browser ; set browser "firefox %u"
+macro c set browser "echo %u | xclip -r"; open-in-browser ; set browser "firefox %u"
+macro w set browser "w3m %u" ; open-in-browser-and-mark-read ; set browser "firefox %u"
+
+# colors
+color listnormal default default dim
+color listfocus default green
+color listfocus_unread default green bold
+color info yellow green bold
+color hint-description white green bold
+highlight feedlist " " red
+highlight article "^(Feed|Title|Author|Link|Date|Links|Podcast Download URL|Subject|Posted):" cyan default
+#highlight article "\\[(.* )?[0-9]*\\]:?" cyan default
+highlight article "\\[(.* )?[0-9]*(\\(link #[0-9]*\\))?\\]:?" cyan default
+highlight article "\\((link|video|image)\\)$" cyan default
