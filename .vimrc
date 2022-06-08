@@ -7,6 +7,8 @@ Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'junegunn/goyo.vim'
+Plug 'majutsushi/tagbar'
+Plug 'scrooloose/nerdcommenter'
 
 call plug#end()
 
@@ -21,6 +23,8 @@ let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_css_checkers = ['csslint']
 
 let g:srcery_italic = 1
+
+let g:tagbar_sort = 0
 
 filetype plugin indent on		" recognize filetypes
 
@@ -62,14 +66,18 @@ nmap <c-h> i<Space><Esc>l	" insert a blankspace before the cursor in NORMAL mode
 nmap <c-l> a<Space><Esc>h	" insert a blankspace after the cursor in NORMAL mode
 nmap ]l :lnext<CR>			" jump to next item of location list
 nmap [l :lprev<CR>			" jump to previous item of location list
+"inoremap <c-e> <c-o>$		" jump to end of line in INSERT mode
+"inoremap <c-a> <c-o>0		" jump to beggining of line in INSERT mode
 
 """"""	Leader key mapping
 
+map <leader>ll :Lex<Esc>
 map <leader>g :Goyo<Esc>
 map <leader>o :setlocal spell!<Esc>
 map <leader>om :setlocal spell spelllang=mk<Esc>
 map <leader>oe :setlocal spell spelllang=en<Esc>
 map <leader>km :setlocal keymap=macedonian_utf-8<Esc>
+map <leader>tb :TagbarToggle<CR>
 
 """"""	Command mapping
 

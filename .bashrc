@@ -10,6 +10,11 @@ export EDITOR="/usr/bin/vim"
 export TERMINAL="/usr/local/bin/st"
 export DOTREMINDERS="$HOME/.config/remind/reminders.rem"
 
+# cleanup variables
+export LESSHISTFILE="$HOME/.config/lesshst"
+#export GTK2_RC_FILES="$HOME/.config/gtk-2.0/gtkrc"
+export INPUTRC="$HOME/.config/readline/inputrc"
+
 # bash prompt 
 # PS1='[\u@\h \W]\$ '
 PS1='\[\033[1;38;5;71m\][\u@\h \[\033[1;37m\]\W\[\033[1;38;5;71m\]]\$ \[\033[0m\]'
@@ -46,6 +51,7 @@ alias free="free -m"
 alias cdto="source cdto"
 alias d="ddgr -n 5"
 alias remc="rem -cl -w1,1,1 -m -b1"
+alias reme="vim + ~/.config/remind/reminders.rem"
 alias mpvhd="mpv --ytdl-format='bv*[height<=720]+ba/b[height<=720]'"
 alias mpvbest="mpv --ytdl-format=b"
 
