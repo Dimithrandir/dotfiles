@@ -41,7 +41,7 @@ define-filter "YouTube" "tags =~ \"YouTube\""
 
 # macros
 macro m set browser "tsp mpv --no-terminal --force-window=yes %u"; open-in-browser-and-mark-read ; set browser "firefox %u"
-macro M set browser "tsp mpv --ytdl-format='bestvideo[height<=720]+bestaudio/best[height<=720]' --no-terminal %u"; open-in-browser-and-mark-read ; set browser "firefox %u"
+macro M set browser "tsp mpv --ytdl-format='bv[height<=720]+ba/b[height<=720]' --no-terminal %u"; open-in-browser-and-mark-read ; set browser "firefox %u"
 macro B set browser "tsp mpv --ytdl-format=best --no-terminal %u"; open-in-browser-and-mark-read ; set browser "firefox %u"
 macro p set browser "firefox --private-window %u"; open-in-browser-and-mark-read ; set browser "firefox %u"
 #macro i set browser "urxvt -e yt -d %u &"; open-in-browser ; set browser "firefox %u"
