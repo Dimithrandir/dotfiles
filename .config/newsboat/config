@@ -57,6 +57,7 @@ color listfocus_unread default green bold
 color info yellow green bold
 color hint-description white green bold
 highlight feedlist " " red
+#highlight feedlist " " magenta
 highlight article "^(Feed|Title|Author|Link|Date|Links|Podcast Download URL|Subject|Posted):" cyan default
 #highlight article "\\[(.* )?[0-9]*\\]:?" cyan default
 highlight article "\\[(.* )?[0-9]*(\\(link #[0-9]*\\))?\\]:?" cyan default

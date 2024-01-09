@@ -9,6 +9,8 @@ Plug 'tpope/vim-surround'
 Plug 'junegunn/goyo.vim'
 Plug 'majutsushi/tagbar'
 Plug 'scrooloose/nerdcommenter'
+Plug 'davidhalter/jedi-vim'
+Plug 'udalov/kotlin-vim'
 
 call plug#end()
 
@@ -21,10 +23,17 @@ let g:syntastic_check_on_wq = 0
 
 let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_css_checkers = ['csslint']
+let g:syntastic_html_checkers = ['jshint']
+"let g:syntastic_html_checkers = ['w3']
+let g:syntastic_sh_checkers = ['shellcheck']
+let g:syntastic_python_checkers = ['flake8']
+"let g:syntastic_python_checkers = ['pylint']
 
 let g:srcery_italic = 1
 
 let g:tagbar_sort = 0
+
+let g:jedi#use_tabs_not_buffers = 1
 
 filetype plugin indent on		" recognize filetypes
 
@@ -62,7 +71,7 @@ set ignorecase
 
 nmap <c-j> o<Esc>k			" insert new line bellow in NORMAL mode
 nmap <c-k> O<Esc> 			" insert new line above in NORMAL mode
-nmap <c-h> i<Space><Esc>l	" insert a blankspace before the cursor in NORMAL mode
+cmap <c-h> i<Space><Esc>l	" insert a blankspace before the cursor in NORMAL mode
 nmap <c-l> a<Space><Esc>h	" insert a blankspace after the cursor in NORMAL mode
 nmap ]l :lnext<CR>			" jump to next item of location list
 nmap [l :lprev<CR>			" jump to previous item of location list
@@ -78,6 +87,15 @@ map <leader>om :setlocal spell spelllang=mk<Esc>
 map <leader>oe :setlocal spell spelllang=en<Esc>
 map <leader>km :setlocal keymap=macedonian_utf-8<Esc>
 map <leader>tb :TagbarToggle<CR>
+map <leader>sc :SyntasticCheck<CR>
+map <leader>si :SyntasticInfo<CR>
+map <leader>ss :SyntasticToggleMode<CR>
+map <leader>sr :SyntasticReset<CR>
+map <leader>sw :lopen<CR>
+map <leader>sq :lclose<CR>
+map <leader>s[ :lprev<CR>
+map <leader>s] :lnext<CR>
+
 
 """"""	Command mapping
 

@@ -5,7 +5,7 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/.local/bin:$HOME/.deta/bin"
 export EDITOR="/usr/bin/vim"
 export TERMINAL="/usr/local/bin/st"
 export DOTREMINDERS="$HOME/.config/remind/reminders.rem"
@@ -44,6 +44,9 @@ bind "set show-all-if-ambiguous on"
 bind "set menu-complete-display-prefix on"
 
 alias cp="cp -i -v"
+alias rm="rm -v"
+alias rmdir="rmdir -v"
+alias mkdir="mkdir -v"
 alias df="df -h"
 alias du="du -h"
 alias free="free -m"
@@ -54,6 +57,7 @@ alias remc="rem -cl -w1,1,1 -m -b1"
 alias reme="vim + ~/.config/remind/reminders.rem"
 alias mpvhd="mpv --ytdl-format='bv*[height<=720]+ba/b[height<=720]'"
 alias mpvbest="mpv --ytdl-format=b"
+alias packe="vim $HOME/package-list"
 
 # Cyrillic aliases
 alias цд="cd"
@@ -61,13 +65,13 @@ alias лс="ls"
 alias вим="vim"
 alias затхура="zathura"
 alias д="ddgr -n 5"
+alias трее="tree"
 
 alias clearswap="sudo swapoff -a && sudo swapon -a"
 alias cswap="sudo swapoff -a && sudo swapon -a"
-alias rm="rm -v"
-alias mkdir="mkdir -v"
 alias pingr="ping 192.168.0.1"
 alias pingq="ping 9.9.9.9"
 
 # dotfiles repo
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
+
