@@ -1,7 +1,7 @@
 # general
 suppress-first-reload yes
 auto-reload yes
-reload-time 30
+reload-time 60
 browser firefox
 prepopulate-query-feeds yes
 feed-sort-order lastupdated

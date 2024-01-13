@@ -1,0 +1,27 @@
+#!/bin/sh
+
+case "$1" in
+	lock)
+		# i3lock 
+		;;
+	exit)
+		i3-msg exit
+		;;
+	switchuser)
+		# switchuser
+		;;
+	suspend)
+		systemctl suspend
+		;;
+	reboot)
+		systemctl reboot
+		;;
+	shutdown)
+		systemctl poweroff
+		;;
+	*)
+		echo "Usage: $0 [ lock|exit|switchuser|suspend|reboot|shutdown ]"
+		;;
+	esac
+
+exit 0
