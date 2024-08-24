@@ -16,6 +16,8 @@ call plug#end()
 
 """"""	Plugins customization
 
+let g:netrw_browse_split = 3	" open files in new tabs from explore
+
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 0
