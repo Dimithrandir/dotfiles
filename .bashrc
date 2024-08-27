@@ -28,15 +28,14 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
+alias diff='diff --color=auto'
+alias ip='ip --color=auto'
 
+# less in color
+#export LESS='-R --use-color -Dd+g$Du+w$'
 # man entries in color
-export LESS_TERMCAP_mb=$'\e[1;32m'
-export LESS_TERMCAP_md=$'\e[1;32m'
-export LESS_TERMCAP_me=$'\e[0m'
-export LESS_TERMCAP_se=$'\e[0m'
-export LESS_TERMCAP_so=$'\e[01;33m'
-export LESS_TERMCAP_ue=$'\e[0m'
-export LESS_TERMCAP_us=$'\e[1;4;31m'
+export MANPAGER="less -R --use-color -Dd+g -Du+w -DP+kW -DP+kW -DS+ky"
+export MANROFFOPT="-P -c"
 
 # bash completion
 bind "TAB:menu-complete"
