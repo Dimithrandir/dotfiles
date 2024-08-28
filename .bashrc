@@ -10,6 +10,12 @@ export EDITOR="/usr/bin/vim"
 export TERMINAL="/usr/local/bin/st"
 export DOTREMINDERS="$HOME/.config/remind/reminders.rem"
 
+# set user directories (just in case)
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_STATE_HOME="$HOME/.local/state"
+
 # cleanup variables
 export LESSHISTFILE="$HOME/.config/lesshst"
 #export GTK2_RC_FILES="$HOME/.config/gtk-2.0/gtkrc"
@@ -21,7 +27,7 @@ PS1='\[\033[1;38;5;71m\][\u@\h \[\033[1;37m\]\W\[\033[1;38;5;71m\]]\$ \[\033[0m\
 #PS1='\[\033[1;34m\][\u@\h \[\033[1;37m\]\W\[\033[1;34m\]]\$ \[\033[0m\]'
 #PS1='\[\033[1;38;5;214m\][\u@\h \[\033[1;37m\]\W\[\033[1;38;5;214m\]]\$ \[\033[0m\]'
 
-eval "$(dircolors $HOME/.dir_colors)"
+eval "$(dircolors "$XDG_CONFIG_HOME"/dir_colors)"
 
 # aliases of basic commands with color
 alias ls='ls --color=auto'
@@ -34,7 +40,7 @@ alias ip='ip --color=auto'
 # less in color
 #export LESS='-R --use-color -Dd+g$Du+w$'
 # man entries in color
-export MANPAGER="less -R --use-color -Dd+g -Du+w -DP+kW -DP+kW -DS+ky"
+export MANPAGER="less -R --use-color -Dd+g -Du+c -DP+kW -DSky"
 export MANROFFOPT="-P -c"
 
 # bash completion
@@ -56,7 +62,7 @@ alias remc="rem -cl -w1,1,1 -m -b1"
 alias reme="vim + ~/.config/remind/reminders.rem"
 alias mpvhd="mpv --ytdl-format='bv*[height<=720]+ba/b[height<=720]'"
 alias mpvbest="mpv --ytdl-format=b"
-alias packe="vim $HOME/package-list"
+alias packe='vim $HOME/package-list'
 
 # Cyrillic aliases
 alias цд="cd"
@@ -72,5 +78,5 @@ alias pingr="ping 192.168.0.1"
 alias pingq="ping 9.9.9.9"
 
 # dotfiles repo
-alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 
