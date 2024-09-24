@@ -1,0 +1,16 @@
+#!/bin/sh
+
+# Updates the cpu temperature sensor path in i3status config file.
+# This path can change with every reboot. This script makes sure that i3status
+# config file is updated with the correct path when this happens.
+
+dir="/sys/devices/platform/coretemp.0/hwmon"
+i3status_config="$HOME/.config/i3status/config"
+
+hwmon_num=$(ls "$dir" | rev| cut -c -1)
+
+echo "$hwmon_num"
+
+sed -i "s/hwmon[0-9]/hwmon$hwmon_num/" "$i3status_config"
+
+i3-msg restart
